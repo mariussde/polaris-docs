@@ -58,7 +58,7 @@ export function Navbar({ dict }: { dict: Dictionary }) {
               >
                 <GithubIcon className="h-[1.1rem] w-[1.1rem]" />
               </Link>
-              <ModeToggle dict={dict} />
+              <ModeToggle/>
             </div>
           </div>
         </div>

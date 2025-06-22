@@ -5,12 +5,9 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
-import { Dictionary } from "@/lib/dictionaries";
-import { useDictionary } from "./contexts/dictionary-provider";
 
-export function ModeToggle({}: { dict: Dictionary }) {
+export function ModeToggle() {
   const { theme, setTheme } = useTheme();
-  const dict = useDictionary();
 
   const handleToggleTheme = () => {
     if (theme === "light") {
