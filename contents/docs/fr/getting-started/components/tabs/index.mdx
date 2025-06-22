@@ -1,0 +1,68 @@
+---
+title: Onglets
+description: Cette section prévisualise le composant Onglets.
+---
+
+Le composant `Tabs` vous permet d'organiser le contenu en plusieurs sections, permettant aux utilisateurs de basculer entre elles facilement. C'est particulièrement utile pour afficher du contenu connexe de manière compacte.
+
+## Aperçu
+
+<Tabs defaultValue="java" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+  </TabsList>
+  <TabsContent value="java">
+    ```java
+    // HelloWorld.java
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="typescript">
+    ```typescript
+    // helloWorld.ts
+    function helloWorld(): void {
+        console.log("Hello, World!");
+    }
+    helloWorld();
+    ```
+  </TabsContent>
+</Tabs>
+
+## Props
+
+| Prop        | Type   | Default     | Description                                      |
+|-------------|--------|-------------|--------------------------------------------------|
+| `defaultValue` | `string` | `null` | La valeur de l'onglet qui est sélectionné par défaut. |
+| `className` | `string` | `""` | Classes CSS supplémentaires pour styliser le composant Tabs. |
+
+## Code
+
+```jsx
+<Tabs defaultValue="java" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+  </TabsList>
+  <TabsContent value="java">
+    ```java
+    // HelloWorld.java
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }
+    ```</TabsContent>
+  <TabsContent value="typescript">
+    ```typescript
+    // helloWorld.ts
+    function helloWorld(): void {
+        console.log("Hello, World!");
+    }
+    helloWorld();
+    ```</TabsContent>
+</Tabs>

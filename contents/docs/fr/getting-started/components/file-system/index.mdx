@@ -1,0 +1,124 @@
+---
+title: Système de Fichiers
+description: Cette section fournit un aperçu de la façon dont PolarisDocs gère l'affichage du système de fichiers dans Markdown.
+---
+
+Le composant `Files` vous permet d'afficher un système de fichiers structuré dans Markdown. Il prend en charge les fichiers, dossiers, la mise en évidence, le tri et les indicateurs pour les ajouts ou suppressions.
+
+## Aperçu
+
+### Structure de Fichiers Par Défaut
+
+Cet exemple représente une structure de projet Next.js :
+
+<Files
+  items={[
+    { type: "file", name: "package.json" },
+    { type: "file", name: "tsconfig.json" },
+    {
+      type: "folder",
+      name: "src",
+      children: [
+        { type: "file", name: "index.tsx" },
+        { type: "file", name: "globals.css" },
+        {
+          type: "folder",
+          name: "components",
+          isOpen: true,
+          children: [
+            { type: "file", name: "Navbar.tsx" },
+            { type: "file", name: "Footer.tsx" },
+          ],
+        },
+        {
+          type: "folder",
+          name: "pages",
+          children: [
+            { type: "file", name: "index.tsx" },
+            { type: "file", name: "about.tsx" },
+          ],
+        },
+      ],
+    },
+    { type: "file", name: "next.config.js" },
+    { type: "file", name: ".gitignore" },
+    { type: "file", name: "extension.kt" },
+  ]}
+/>{" "}
+
+### Structure de Fichiers Triée avec Modifications
+
+Dans cet exemple, le système de fichiers a été modifié :
+
+<Files
+  sorted
+  items={[
+    { type: "file", name: "package.json" },
+    { type: "file", name: "tsconfig.json" },
+    {
+      type: "folder",
+      name: "src",
+      indicator: "add",
+      children: [
+        { type: "file", name: "index.tsx" },
+        { type: "file", name: "globals.css" },
+        {
+          type: "folder",
+          name: "components",
+          isOpen: true,
+          children: [
+            { type: "file", name: "Navbar.tsx" },
+            { type: "file", name: "Footer.tsx" },
+            { type: "file", name: "Button.tsx", highlight: true },
+          ],
+        },
+      ],
+    },
+    { type: "file", name: "next.config.js" },
+    { type: "file", name: ".gitignore" },
+    { type: "folder", name: "public", indicator: "delete",
+    children: [
+           { type: "file", name: "index.html" },   
+      ], 
+    },
+  ]}
+/>{" "}
+
+## Props
+
+`type Items = Array<{ type: "file" | "folder", name: string, children?: Array, highlight?: boolean, indicator?: "add" | "delete" }>`
+
+| Prop        | Type                  | Default | Description                                       |
+| ----------- | --------------------- | ------- | ------------------------------------------------- |
+| `items`     | `Items`               | `[]`    | Définit la structure du système de fichiers.      |
+| `sorted`    | `boolean`             | `false` | Si true, les éléments sont triés alphabétiquement. |
+| `highlight` | `boolean`             | `false` | Met en évidence un fichier spécifique.            |
+| `indicator` | `"add"` \| `"delete"` | `null`  | Affiche un indicateur pour les éléments ajoutés ou supprimés. |
+
+## Code
+
+```md
+<Files
+  items={[
+    { type: "file", name: "package.json" },
+    { type: "file", name: "tsconfig.json" },
+    {
+      type: "folder",
+      name: "src",
+      children: [
+        { type: "file", name: "index.tsx" },
+        { type: "file", name: "globals.css" },
+        {
+          type: "folder",
+          name: "components",
+          children: [
+            { type: "file", name: "Navbar.tsx" },
+            { type: "file", name: "Footer.tsx" },
+          ],
+        },
+      ],
+    },
+    { type: "file", name: "next.config.js" },
+  ]}
+/>
+```

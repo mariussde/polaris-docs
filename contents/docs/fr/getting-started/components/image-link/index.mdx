@@ -1,0 +1,57 @@
+---
+title: Image et Lien
+description: Cette section fournit un aperçu de la façon dont PolarisDocs gère les liens et images dans Markdown.
+---
+
+Dans PolarisDocs, tous les liens et images écrits en Markdown sont automatiquement convertis en leurs composants Next.js respectifs. Cela permet une meilleure optimisation et performance dans votre application.
+
+## Liens
+
+Lorsque vous créez un lien dans votre Markdown, il est converti en composant `Link` de Next.js. Cela permet la navigation côté client et améliore les temps de chargement. Voici un exemple de la façon dont un lien Markdown est transformé :
+
+### Exemple Markdown
+
+```markdown 
+[Visiter OpenAI](https://www.openai.com)
+```
+
+### Sortie Rendu
+
+Le Markdown ci-dessus est converti en :
+
+```jsx
+<Link href="https://www.openai.com" target="_blank" rel="noopener noreferrer">
+    Visiter OpenAI
+</Link>
+```
+
+## Images
+
+De même, les images dans Markdown sont transformées en composant `Image` de Next.js. Cela permet l'optimisation automatique des images, comme le chargement différé et le redimensionnement, ce qui améliore les performances et l'expérience utilisateur. Voici un exemple :
+
+### Markdown
+
+```markdown
+![Texte alternatif pour l'image](https://via.placeholder.com/150)
+```
+
+### Sortie
+
+Le Markdown ci-dessus est converti en :
+
+```jsx
+<Image
+    src="https://via.placeholder.com/150"
+    alt="Texte alternatif pour l'image"
+    width={800}
+    height={350}
+/>
+```
+
+## Avantages
+
+- **Optimisation des Performances** : La conversion automatique en composants Next.js assure un chargement optimisé des images et liens.
+- **Expérience Utilisateur Améliorée** : La navigation côté client avec le composant `Link` de Next.js améliore l'expérience de navigation.
+- **Images Responsives** : Le composant `Image` de Next.js gère les images responsives, fournissant la meilleure qualité pour différentes tailles d'écran.
+
+En utilisant ces fonctionnalités, vous pouvez vous assurer que votre documentation est non seulement visuellement attrayante mais aussi performante.

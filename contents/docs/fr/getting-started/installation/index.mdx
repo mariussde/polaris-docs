@@ -1,0 +1,73 @@
+---
+title: Installation
+description: Guide d'installation pour notre application.
+---
+
+La configuration d'PolarisDocs est simple, avec des options pour cloner le dépôt ou utiliser la commande `npx` pratique. PolarisDocs nécessite [Node.js](https://nodejs.org/) version 18 ou supérieure pour des performances optimales.
+
+## Cloner le Dépôt
+Pour commencer, vous pouvez cloner le dépôt PolarisDocs directement depuis GitHub.
+<Stepper>
+  <StepperItem title="Étape 1 : Cloner le Dépôt PolarisDocs">
+    Commencez par cloner le dépôt PolarisDocs depuis GitHub :
+
+    ```plaintext
+    git clone https://github.com/nisabmohd/Aria-Docs.git
+    ```
+  </StepperItem>
+
+  <StepperItem title="Étape 2 : Accéder au Répertoire du Projet">
+    Après avoir cloné, naviguez dans le répertoire du projet pour commencer la configuration :
+
+    ```plaintext
+    cd Aria-Docs
+    ```
+  </StepperItem>
+
+  <StepperItem title="Étape 3 : Installer les Dépendances Requises">
+    Installez toutes les dépendances de projet nécessaires avec npm :
+
+    <Note title="Rappel">
+      Pour supporter React 19, les mainteneurs de packages devront tester et mettre à jour leurs packages pour inclure React 19 comme dépendance peer. Cela est déjà en cours.
+      <br/>
+    </Note>
+
+    ```plaintext
+    npm install
+    ```
+  </StepperItem>
+
+  <StepperItem title="Étape 4 : Lancer le Serveur de Développement">
+    Enfin, démarrez le serveur de développement pour voir le projet localement :
+
+    ```plaintext
+    npm run dev
+    ```
+  </StepperItem>
+</Stepper>
+
+## Configuration Rapide avec npx
+
+Pour une configuration plus rapide, utilisez la commande `npx` pour créer un nouveau projet PolarisDocs en une étape :
+
+```plaintext
+npx create-aria-doc <project-directory>
+```
+
+**Sortie de Commande :**
+
+```plaintext
+Creating a new PolarisDocs project in /path/to/your/project from the master branch...
+Cloning Master (Full Documentation)...
+PolarisDocs project successfully created in /path/to/your/project!
+
+Next steps:
+1. Navigate to your project directory:
+   cd <project-directory>
+2. Install dependencies:
+   npm install
+3. Start the development server:
+   npm run dev
+```
+
+Avec cette configuration, vous aurez une instance PolarisDocs prête à l'emploi pour commencer à construire votre documentation.

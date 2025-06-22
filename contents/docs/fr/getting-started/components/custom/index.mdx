@@ -1,0 +1,37 @@
+---
+title: Composants Personnalisés
+description: Comment créer des composants personnalisés pour Markdown.
+---
+
+Pour ajouter des composants personnalisés dans PolarisDocs, suivez ces étapes :
+
+1. **Créez Votre Composant** : D'abord, créez votre composant personnalisé dans le dossier `@components/markdown`. Par exemple, vous pourriez créer un fichier nommé `Outlet.tsx`.
+
+2. **Importez Votre Composant** : Ensuite, ouvrez le fichier `@lib/markdown.ts`. C'est là que vous enregistrerez votre composant personnalisé pour l'utiliser dans Markdown.
+
+3. **Ajoutez Votre Composant à l'Objet Components** : Dans le fichier `@lib/markdown.ts`, importez votre composant personnalisé et ajoutez-le à l'objet `components`. Voici comment procéder :
+
+```ts
+import Outlet from "@/components/markdown/outlet";
+
+// Ajouter des composants personnalisés
+const components = {
+  Outlet,
+};
+```
+
+4. **Utiliser Votre Composant Personnalisé dans Markdown** : Après avoir enregistré votre composant, vous pouvez maintenant l'utiliser n'importe où dans votre contenu Markdown. Par exemple, si votre composant `Outlet` est conçu pour afficher des informations supplémentaires, vous pouvez l'utiliser comme suit :
+
+### Exemple Markdown
+
+```markdown
+<Outlet>
+  Ceci est du contenu personnalisé rendu par le composant Outlet !
+</Outlet>
+```
+
+### Sortie Rendu
+
+Cela rendra le contenu à l'intérieur du composant `Outlet`, vous permettant de créer du contenu Markdown réutilisable et dynamique.
+
+En suivant ces étapes, vous pouvez étendre les capacités de votre documentation Markdown et créer une expérience utilisateur plus engageante.

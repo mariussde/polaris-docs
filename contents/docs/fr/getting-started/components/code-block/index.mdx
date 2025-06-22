@@ -1,0 +1,50 @@
+---
+title: Bloc de Code
+description: Cette section prévisualise les fonctionnalités du Bloc de Code en markdown.
+---
+
+Le Bloc de Code dans cette documentation vous permet d'afficher des extraits de code avec numérotation de lignes optionnelle et mise en évidence de lignes.
+
+## Aperçu
+
+```javascript:main.js showLineNumbers {3-4}
+function isRocketAboutToCrash() {
+    // Check if the rocket is stable
+    if (!isStable()) {
+        NoCrash(); // Prevent the crash
+    }
+}
+```
+
+```go:main.go
+package main
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, world!")
+}
+```
+
+Dans cet exemple, les numéros de ligne sont affichés pour les lignes 1 à 4. Vous pouvez spécifier quelles lignes mettre en évidence en utilisant le format `{2,3-5}`.
+
+## Utilisation
+
+Vous pouvez directement utiliser la syntaxe suivante pour créer un bloc de code avec numérotation de lignes et mettre en évidence des lignes spécifiques :
+
+````md
+```javascript:main.js showLineNumbers {3-4}
+function isRocketAboutToCrash() {
+    // Check if the rocket is stable
+    if (!isStable()) {
+        NoCrash(); // Prevent the crash
+    }
+}
+```
+````
+
+### Fonctionnalités
+
+- **Numérotation de Lignes** : Activez la numérotation de lignes en ajoutant `showLineNumbers` après les backticks d'ouverture.
+- **Mise en Évidence de Lignes** : Spécifiez les lignes à mettre en évidence en utilisant des accolades (ex : `{2,3-5}`).
+- **Coloration Syntaxique** : Utilisez le langage approprié pour la coloration syntaxique.
+

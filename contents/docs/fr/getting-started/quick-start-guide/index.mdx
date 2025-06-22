@@ -1,0 +1,120 @@
+---
+title: Guide de Démarrage Rapide
+description: Cette section fournit un aperçu du Guide de Démarrage Rapide.
+---
+
+Suivez ces instructions simples pour configurer votre projet efficacement et commencer à créer du contenu sans délai ! :
+
+<Note type="info">
+  Tous les modèles suivent le même guide de démarrage rapide, vous pouvez donc appliquer ces étapes universellement.
+</Note>
+
+## Documentation
+
+1. **Configurer le Routage**
+
+   - Ouvrez le fichier `@lib/route-config.ts` et ajoutez vos pages de routage :
+
+   
+     ```typescript:route-config.ts
+     export const ROUTES: EachRoute[] = [
+       // Ajoutez une nouvelle route ci-dessous
+       {
+         title: "Fondamentaux",
+         href: "/fundamentals",
+         noLink: true, // Définissez à true pour empêcher le routage
+         items: [
+           // Toutes les sous-sections sous `fundamentals`
+           { title: "Serveur HTTP", href: "/http-server" },
+         ],
+       },
+     ];
+     ```
+
+2. **Créer la Structure de Contenu**
+
+   - Naviguez vers le répertoire `@content/docs` et créez un dossier nommé `fundamentals`, comme défini dans le fichier `route-config`. Dans ce dossier, créez un sous-dossier nommé `http-server`, et à l'intérieur, créez un fichier `index.mdx` qui sera rendu quand vous naviguerez vers `/fundamentals/http-server` :
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "content",
+      isOpen: true,
+      children: [
+        {
+          type: "folder",
+          name: "docs",
+          isOpen: true,
+          children: [
+            {
+              type: "folder",
+              name: "fundamentals",
+              isOpen: true,
+              children: [
+                {
+                  type: "folder",
+                  name: "http-server",
+                  isOpen: true,
+                  children: [{ type: "file", name: "index.mdx" }],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ]}
+/>
+
+3. **Écrire Votre Contenu Markdown**
+   - Commencez à écrire votre contenu markdown à l'intérieur du fichier `index.mdx`.
+
+<Note type="warning">
+  Assurez-vous d'inclure le frontmatter au début du fichier, qui est utilisé pour
+  le titre et la description de la page :
+</Note>
+
+     ```markdown:index.mdx showLineNumbers {1-4}
+     ---
+     title: Serveur HTTP
+     description: Cette section concerne le Serveur HTTP.
+     ---
+
+     <!-- Ici va votre contenu markdown -->
+     ```
+
+4. **Exécuter Votre Application**
+   - Assurez-vous que votre application fonctionne. Naviguez vers `http://localhost:3000/docs/fundamentals/http-server` pour voir votre contenu. Vous devriez aussi le voir dans le panneau de gauche, vous permettant de naviguer vers d'autres pages.
+
+## Blogs
+
+Pour commencer avec les blogs, suivez ces étapes :
+
+- Naviguez vers le répertoire `@content/blogs` et créez un fichier avec un nom unique préfixé avec `.mdx`, puis commencez à écrire le contenu markdown à l'intérieur.
+
+<Note type="warning">
+  Assurez-vous d'ajouter le frontmatter suivant pour formater correctement les données pour les blogs
+</Note>
+
+```markdown:blog-name.mdx
+---
+title: "Construire un Système de Fichiers Récursif avec React : Une Plongée Profonde"
+description: "Explorez comment créer un système de fichiers récursif dans React. Cet article de blog fournit un guide complet sur la construction d'un système de fichiers où les dossiers et fichiers peuvent être imbriqués, ajoutés, renommés et supprimés."
+date: 02-09-2024
+authors:
+  - avatar: "https://ui.shadcn.com/avatars/02.png"
+    handle: nisabmohd
+    username: Nisab Mohd
+    handleUrl: "https://github.com/nisabmohd"
+cover: "https://img.freepik.com/premium-vector/many-monsters-various-colors-doodle-come-bless-birthday-happy_577083-84.jpg?w=826"
+---
+
+<!-- Votre contenu markdown de blog -->
+```
+
+- Naviguez vers votre serveur de développement local à `http://localhost:3000/blog`, où vous verrez votre blog listé et trié selon la date. Vous pouvez naviguer vers n'importe quel blog pour le lire.
+
+## Explorer Plus Loin
+
+Cette section sert de point de départ pour explorer l'application. En suivant les étapes ci-dessus, vous pouvez rapidement et facilement configurer votre contenu. Pour plus de personnalisation et de contrôle, veuillez vous référer aux pages suivantes.

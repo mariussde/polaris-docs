@@ -1,0 +1,83 @@
+{
+    "metadata": {
+        "title": "PolarisDocs - Modello",
+        "description": "Questo modello di documentazione completo, realizzato con Next.js e disponibile come open source, offre un design elegante e reattivo, adattato per soddisfare tutte le tue esigenze di documentazione del progetto."
+    },
+    "home": {
+        "follow_github": "Seguici su GitHub",
+        "main_header": "Costruisci facilmente siti di documentazione straordinari con flessibilità per progetti diversi.",
+        "sub_header": "Questo modello di documentazione ricco di funzionalità, costruito con più framework inclusi Next.js, React Router e TanStack Router, offre un design elegante e reattivo, perfetto per tutte le tue esigenze di documentazione del progetto.",
+        "get_started": "Inizia",
+        "read_blog": "Leggi Blog",
+        "name": "PolarisDocs"
+    },
+    "footer": {
+        "built_by": "Costruito da",
+        "source_code_available": "Il codice sorgente è disponibile su",
+        "deploy": "Distribuisci",
+        "sponsor": "Sponsor"
+    },
+    "navbar": {
+        "links": {
+            "documentation": "Documentazione",
+            "blog": "Blog",
+            "examples": "Esempi",
+            "guides": "Guide",
+            "community": "Community"
+        },
+        "search": {
+            "search_documentation": "Cerca nella documentazione...",
+            "no_results_found": "Nessun risultato trovato per",
+            "type_something": "Scrivi qualcosa per cercare..."
+        },
+        "theme": {
+            "light": "Chiaro",
+            "dark": "Scuro",
+            "system": "Sistema"
+        }
+    },
+    "docs": {
+        "on_this_page": "In questa pagina",
+        "next": "Successivo",
+        "previous": "Precedente"
+    },
+    "not_found": {
+        "404": "404",
+        "page_not_found": "Pagina non trovata",
+        "sub_text": "Ops! La pagina che stai cercando non esiste.",
+        "back_to_homepage": "Torna alla homepage"
+    },
+    "leftbar": {
+        "Getting Started": "Iniziare",
+        "Introduction": "Introduzione",
+        "Installation": "Installazione",
+        "Quick Start Guide": "Guida di avvio rapido",
+        "Project Structure": "Struttura del progetto",
+        "Components": "Componenti",
+        "Stepper": "Stepper",
+        "Tabs": "Schede",
+        "Note": "Nota",
+        "Code Block": "Blocco di codice",
+        "Image & Link": "Immagine e link",
+        "File System": "Sistema di file",
+        "Custom": "Personalizzato",
+        "Internationalization": "Internazionalizzazione",
+        "Algolia Search": "Ricerca Algolia",
+        "Themes": "Temi",
+        "Customize": "Personalizza"
+    },
+    "blog": {
+        "title": "Gli ultimi blog di questo prodotto",
+        "sub_title": "Tutti gli ultimi blog e notizie, direttamente dal team.",
+        "published_on": "Pubblicato il",
+        "back_to_blog": "Torna al blog",
+        "posted_by": "Pubblicato da"
+    },
+    "error": {
+        "oops": "Ops!",
+        "something_went_wrong": "Qualcosa è andato storto.",
+        "sub_text": "Ci dispiace, ma si è verificato un errore durante l'elaborazione della tua richiesta.",
+        "reload_page": "Ricarica pagina",
+        "back_to_homepage": "Torna alla homepage"
+    }
+}

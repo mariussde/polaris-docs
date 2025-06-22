@@ -1,0 +1,93 @@
+---
+title: Personnaliser
+description: Ce guide fournit des instructions pour personnaliser notre application.
+---
+
+## Options Markdown
+
+Pour personnaliser l'analyse Markdown, naviguez vers `@lib/markdown.ts` et localisez la fonction `parseMdx`. Vous pouvez ajouter vos plugins souhaités dans `mdxOptions`. Voici un exemple :
+
+```ts:lib/markdown.ts
+async function parseMdx<Frontmatter>(rawMdx: string) {
+    return await compileMDX<Frontmatter>({
+        source: rawMdx,
+        options: {
+            parseFrontmatter: true,
+            mdxOptions: {
+                // Ajoutez vos plugins ici
+                rehypePlugins: [Shiki],
+                remarkPlugins: [remarkGfm],
+            },
+        },
+        components,
+    });
+}
+```
+
+## Polices
+
+Actuellement, ce projet utilise la police `Space_Grotesk`. Si vous voulez utiliser d'autres polices, vous pouvez changer la configuration dans la mise en page principale comme indiqué ci-dessous :
+
+### Polices Google
+
+Pour utiliser une police Google, importez votre police souhaitée depuis `next/font/google`, initialisez-la avec des options et appliquez la variable au `body` :
+
+```tsx:app/layout.tsx
+import { Space_Grotesk } from "next/font/google";
+
+const fontSans = Space_Grotesk({
+    display: "swap",
+    variable: "--font-regular",
+    weight: "400",
+    subsets: ["latin"],
+});
+
+export default function RootLayout({ children }) {
+    return (
+        <html lang="en">
+            <body className={`${fontSans.variable} font-regular`}>
+                {children}
+            </body>
+        </html>
+    );
+}
+```
+
+### Polices Locales
+
+Pour utiliser une police locale, vous devez utiliser le chargeur de police locale de Next.js. Passez les options et appliquez-les au `body` :
+
+```tsx:app/layout.tsx
+import localFont from "next/font/local";
+
+const geistSans = localFont({
+    src: "./fonts/GeistVF.woff",
+    variable: "--font-regular",
+    weight: "100 900",
+});
+
+export default function RootLayout({ children }) {
+    return (
+        <html lang="en">
+            <body className={`${geistSans.variable} font-regular`}>
+                {children}
+            </body>
+        </html>
+    );
+}
+```
+
+Pour les deux options, assurez-vous d'ajouter la variable à `tailwind.config.ts` :
+
+```ts:tailwind.config.ts
+{
+    // ...
+    extend: {
+        fontFamily: {
+            regular: ["var(--font-regular)"],
+        },
+    }
+}
+```
+
+Pour les thèmes et couleurs, référez-vous à la [section Thèmes](/docs/getting-started/themes)
