@@ -1,0 +1,121 @@
+---
+title: Guida di Avvio Rapido
+description: Questa sezione fornisce una panoramica della Guida di Avvio Rapido.
+---
+
+Segui queste semplici istruzioni per configurare il tuo progetto in modo efficiente e iniziare a creare contenuti senza ritardi!:
+
+<Note type="info">
+  Tutti i template seguono la stessa guida di avvio rapido, quindi puoi applicare questi passaggi universalmente.
+</Note>
+
+## Documentazione
+
+1. **Configurare il Routing**
+
+   - Apri il file `@lib/route-config.ts` e aggiungi le tue pagine di routing:
+
+   
+     ```typescript:route-config.ts
+     export const ROUTES: EachRoute[] = [
+       // Aggiungi nuova rotta sotto
+       {
+         title: "Fundamentals",
+         href: "/fundamentals",
+         noLink: true, // Imposta su true per prevenire il routing
+         items: [
+           // Tutte le sottosezioni sotto `fundamentals`
+           { title: "HTTP Server", href: "/http-server" },
+         ],
+       },
+     ];
+     ```
+
+2. **Creare la Struttura dei Contenuti**
+
+   - Naviga nella directory `@content/docs` e crea una cartella chiamata `fundamentals`, come definito nel file `route-config`. All'interno di questa cartella, crea una sottocartella chiamata `http-server`, e all'interno di quella, crea un file `index.mdx` che verrà renderizzato quando navighi a `/fundamentals/http-server`:
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "content",
+      isOpen: true,
+      children: [
+        {
+          type: "folder",
+          name: "docs",
+          isOpen: true,
+          children: [
+            {
+              type: "folder",
+              name: "fundamentals",
+              isOpen: true,
+              children: [
+                {
+                  type: "folder",
+                  name: "http-server",
+                  isOpen: true,
+                  children: [{ type: "file", name: "index.mdx" }],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ]}
+/>
+
+
+3. **Scrivere il Tuo Contenuto Markdown**
+   - Inizia a scrivere il tuo contenuto markdown all'interno del file `index.mdx`.
+
+<Note type="warning">
+  Assicurati di includere il frontmatter all'inizio del file, che viene utilizzato per
+  il titolo della pagina e la descrizione:
+</Note>
+
+     ```markdown:index.mdx showLineNumbers {1-4}
+     ---
+     title: HTTP Server
+     description: Questa sezione riguarda il Server HTTP.
+     ---
+
+     <!-- Qui va il tuo contenuto markdown -->
+     ```
+
+4. **Eseguire la Tua Applicazione**
+   - Assicurati che la tua applicazione sia in esecuzione. Naviga a `http://localhost:3000/docs/fundamentals/http-server` per visualizzare il tuo contenuto. Dovresti anche vederlo nel pannello sinistro, permettendoti di navigare ad altre pagine.
+
+## Blog
+
+Per iniziare con i blog, segui questi passaggi:
+
+- Naviga nella directory `@content/blogs` e crea un file con un nome univoco che termina con `.mdx`, poi inizia a scrivere il contenuto markdown all'interno.
+
+<Note type="warning">
+  Assicurati di aggiungere il seguente frontmatter per formattare correttamente i dati per i blog
+</Note>
+
+```markdown:blog-name.mdx
+---
+title: "Building a Recursive File System with React: A Deep Dive"
+description: "Explore how to create a recursive file system in React. This blog post provides a comprehensive guide on building a file system where folders and files can be nested, added, renamed, and deleted."
+date: 02-09-2024
+authors:
+  - avatar: "https://ui.shadcn.com/avatars/02.png"
+    handle: mariussde
+    username: Nisab Mohd
+    handleUrl: "https://github.com/mariussde"
+cover: "https://img.freepik.com/premium-vector/many-monsters-various-colors-doodle-come-bless-birthday-happy_577083-84.jpg?w=826"
+---
+
+<!-- Il tuo contenuto markdown del blog -->
+```
+
+- Naviga al tuo server di sviluppo locale su `http://localhost:3000/blog`, dove vedrai il tuo blog elencato e ordinato per data. Puoi navigare a qualsiasi blog per leggerlo.
+
+## Esplorare Ulteriormente
+
+Questa sezione serve come punto di partenza per esplorare l'applicazione. Seguendo i passaggi sopra, puoi configurare rapidamente e facilmente i tuoi contenuti. Per ulteriori personalizzazioni e controllo, consulta le seguenti pagine.

@@ -29,6 +29,16 @@ export async function generateMetadata(params: LangProps): Promise<Metadata> {
     title: dict.metadata.title,
     metadataBase: new URL("https://polaris-docs.vercel.app/"),
     description: dict.metadata.description,
+    openGraph: {
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "Polaris Systems Documentation",
+        },
+      ],
+    },
   };
 }
 
@@ -52,7 +62,7 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide`}
+        className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide min-h-screen flex flex-col`}
         suppressHydrationWarning
       >
         <ClientDictionary dict={dict}>
@@ -63,7 +73,7 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <Navbar dict={dict} />
-            <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
+            <main className="sm:container mx-auto w-[90vw] flex-1 scroll-smooth">
               {children}
             </main>
             <Footer dict={dict} />

@@ -1,0 +1,200 @@
+---
+title: Struttura del Progetto
+description: Questa sezione fornisce una panoramica della Struttura del Progetto.
+---
+
+## Panoramica della Struttura del Progetto
+
+### app
+
+Questa cartella contiene il codice principale dell'applicazione per Next.js, gestendo layout, routing e pagine di contenuto specifiche. È organizzata per supportare sia le sezioni `docs` che `blog`, con pagine e layout dedicati per ogni sezione.
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "app",
+      isOpen: true,
+      children: [
+        { type: "file", name: "page.tsx" },
+        { type: "file", name: "layout.tsx" },
+        {
+          type: "folder",
+          name: "blog",
+          children: [
+            { type: "file", name: "page.tsx" },
+            {
+              type: "folder",
+              name: "[slug]",
+              children: [{ type: "file", name: "page.tsx" }],
+            },
+          ],
+        },
+        {
+          type: "folder",
+          name: "docs",
+          children: [
+            { type: "file", name: "layout.tsx" },
+            { type: "file", name: "[[...slug]].tsx" },
+          ],
+        },
+      ],
+    },
+  ]}
+/>
+
+### components
+
+Questa cartella contiene tutti i componenti riutilizzabili utilizzati in tutto il progetto. È strutturata per categorizzare i componenti, facilitando la localizzazione e la gestione di elementi UI, personalizzazioni Markdown e navigazione.
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "components",
+      isOpen: true,
+      children: [
+        {
+          type: "folder",
+          name: "ui",
+          isOpen: true,
+          children: [],
+        },
+        {
+          type: "folder",
+          name: "markdown",
+          isOpen: true,
+          children: [
+            { type: "file", name: "note.tsx" },
+            { type: "file", name: "image.tsx" },
+            { type: "file", name: "table.tsx" },
+          ],
+        },
+        { type: "file", name: "navbar.tsx" },
+      ],
+    },
+  ]}
+/>
+
+
+### styles
+
+Questa cartella contiene file CSS globali e specifici per componenti, permettendo consistenza di stile in tutto il progetto e personalizzazioni.
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "styles",
+      isOpen: true,
+      children: [
+        { type: "file", name: "globals.css" },
+        { type: "file", name: "syntax.css" },
+        { type: "file", name: "overrides.css" },
+      ],
+    },
+  ]}
+/>
+
+
+### contents
+
+Questa cartella memorizza tutto il contenuto Markdown per le sezioni di documentazione e blog, con organizzazione chiara per tipo di contenuto. Ogni file Markdown rappresenta un pezzo unico di contenuto, con frontmatter utilizzato per i metadati.
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "contents",
+      isOpen: true,
+      children: [
+        {
+          type: "folder",
+          name: "docs",
+          isOpen: true,
+          children: [
+            { type: "file", name: "getting-started.md" },
+            { type: "file", name: "api-reference.md" },
+            {
+              type: "folder",
+              name: "tutorials",
+              isOpen: true,
+              children: [{ type: "file", name: "tutorial-1.md" }],
+            },
+          ],
+        },
+        {
+          type: "folder",
+          name: "blogs",
+          isOpen: true,
+          children: [
+            { type: "file", name: "intro-to-project.md" },
+            { type: "file", name: "dev-updates.md" },
+          ],
+        },
+      ],
+    },
+  ]}
+/>
+
+
+### public
+
+Questa cartella contiene tutti gli asset statici, come immagini, video, font e icone. Questi file sono direttamente accessibili tramite URL, quindi è importante evitare contenuti sensibili o privati qui.
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "public",
+      isOpen: true,
+      children: [
+        {
+          type: "folder",
+          name: "images",
+          isOpen: true,
+          children: [
+            { type: "file", name: "logo.png" },
+            { type: "file", name: "banner.jpg" },
+          ],
+        },
+        {
+          type: "folder",
+          name: "icons",
+          children: [],
+        },
+        {
+          type: "folder",
+          name: "videos",
+          children: [],
+        },
+      ],
+    },
+  ]}
+/>
+
+
+### lib
+
+Questa cartella contiene funzioni helper e utilità utilizzate in tutta l'applicazione, come logica di parsing Markdown e routing. Queste utilità aiutano a mantenere la base di codice pulita e organizzata separando la funzionalità comune.
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "lib",
+      isOpen: true,
+      children: [
+        { type: "file", name: "markdown.ts" },
+        { type: "file", name: "routes-config.ts" },
+        { type: "file", name: "utils.tsx" },
+      ],
+    },
+  ]}
+/>
+
+### Aggiuntivo
+
+- **`package.json`**: Contiene metadati sul progetto, dipendenze e script per costruire ed eseguire l'applicazione.
+- **`tailwind.config.ts`**: Configura Tailwind CSS, permettendo personalizzazione di colori del tema, font e breakpoint responsive specifici per questo progetto.
+
+Questa struttura organizza il tuo progetto in un modo che supporta scalabilità e manutenibilità, facilitando la navigazione e il lavoro su diverse sezioni dell'applicazione.

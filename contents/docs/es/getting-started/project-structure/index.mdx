@@ -1,0 +1,200 @@
+---
+title: Estructura del Proyecto
+description: Esta sección proporciona una visión general de la Estructura del Proyecto.
+---
+
+## Visión General de la Estructura del Proyecto
+
+### app
+
+Esta carpeta contiene el código principal de la aplicación para Next.js, gestionando layouts, enrutamiento y páginas de contenido específicas. Está organizada para soportar tanto las secciones `docs` como `blog`, con páginas y layouts dedicados para cada sección.
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "app",
+      isOpen: true,
+      children: [
+        { type: "file", name: "page.tsx" },
+        { type: "file", name: "layout.tsx" },
+        {
+          type: "folder",
+          name: "blog",
+          children: [
+            { type: "file", name: "page.tsx" },
+            {
+              type: "folder",
+              name: "[slug]",
+              children: [{ type: "file", name: "page.tsx" }],
+            },
+          ],
+        },
+        {
+          type: "folder",
+          name: "docs",
+          children: [
+            { type: "file", name: "layout.tsx" },
+            { type: "file", name: "[[...slug]].tsx" },
+          ],
+        },
+      ],
+    },
+  ]}
+/>
+
+### components
+
+Esta carpeta contiene todos los componentes reutilizables utilizados en todo el proyecto. Está estructurada para categorizar componentes, facilitando la localización y gestión de elementos de UI, personalizaciones de Markdown y navegación.
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "components",
+      isOpen: true,
+      children: [
+        {
+          type: "folder",
+          name: "ui",
+          isOpen: true,
+          children: [],
+        },
+        {
+          type: "folder",
+          name: "markdown",
+          isOpen: true,
+          children: [
+            { type: "file", name: "note.tsx" },
+            { type: "file", name: "image.tsx" },
+            { type: "file", name: "table.tsx" },
+          ],
+        },
+        { type: "file", name: "navbar.tsx" },
+      ],
+    },
+  ]}
+/>
+
+
+### styles
+
+Esta carpeta contiene archivos CSS globales y específicos de componentes, permitiendo consistencia de estilo en todo el proyecto y personalizaciones.
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "styles",
+      isOpen: true,
+      children: [
+        { type: "file", name: "globals.css" },
+        { type: "file", name: "syntax.css" },
+        { type: "file", name: "overrides.css" },
+      ],
+    },
+  ]}
+/>
+
+
+### contents
+
+Esta carpeta almacena todo el contenido Markdown para las secciones de documentación y blog, con organización clara por tipo de contenido. Cada archivo Markdown representa una pieza única de contenido, con frontmatter utilizado para metadatos.
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "contents",
+      isOpen: true,
+      children: [
+        {
+          type: "folder",
+          name: "docs",
+          isOpen: true,
+          children: [
+            { type: "file", name: "getting-started.md" },
+            { type: "file", name: "api-reference.md" },
+            {
+              type: "folder",
+              name: "tutorials",
+              isOpen: true,
+              children: [{ type: "file", name: "tutorial-1.md" }],
+            },
+          ],
+        },
+        {
+          type: "folder",
+          name: "blogs",
+          isOpen: true,
+          children: [
+            { type: "file", name: "intro-to-project.md" },
+            { type: "file", name: "dev-updates.md" },
+          ],
+        },
+      ],
+    },
+  ]}
+/>
+
+
+### public
+
+Esta carpeta contiene todos los assets estáticos, como imágenes, videos, fuentes e iconos. Estos archivos son directamente accesibles vía URL, por lo que es importante evitar contenido sensible o privado aquí.
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "public",
+      isOpen: true,
+      children: [
+        {
+          type: "folder",
+          name: "images",
+          isOpen: true,
+          children: [
+            { type: "file", name: "logo.png" },
+            { type: "file", name: "banner.jpg" },
+          ],
+        },
+        {
+          type: "folder",
+          name: "icons",
+          children: [],
+        },
+        {
+          type: "folder",
+          name: "videos",
+          children: [],
+        },
+      ],
+    },
+  ]}
+/>
+
+
+### lib
+
+Esta carpeta contiene funciones auxiliares y utilidades utilizadas en toda la aplicación, como lógica de parsing de Markdown y enrutamiento. Estas utilidades ayudan a mantener la base de código limpia y organizada separando la funcionalidad común.
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "lib",
+      isOpen: true,
+      children: [
+        { type: "file", name: "markdown.ts" },
+        { type: "file", name: "routes-config.ts" },
+        { type: "file", name: "utils.tsx" },
+      ],
+    },
+  ]}
+/>
+
+### Adicional
+
+- **`package.json`**: Contiene metadatos sobre el proyecto, dependencias y scripts para construir y ejecutar la aplicación.
+- **`tailwind.config.ts`**: Configura Tailwind CSS, permitiendo personalización de colores de tema, fuentes y breakpoints responsivos específicos para este proyecto.
+
+Esta estructura organiza tu proyecto de una manera que soporta escalabilidad y mantenibilidad, facilitando la navegación y el trabajo en diferentes secciones de la aplicación.

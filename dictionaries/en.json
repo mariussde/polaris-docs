@@ -1,21 +1,19 @@
 {
     "metadata": {
-        "title": "PolarisDocs - Template",
-        "description": "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements."
+        "title": "Polaris Systems - Enterprise Technology Solutions",
+        "description": "Polaris Systems delivers enterprise-grade cloud infrastructure, AI integration, security solutions, and custom software development for modern businesses."
     },
     "home": {
-        "follow_github": "Follow along on GitHub",
-        "main_header": "Effortlessly build stunning documentation sites with flexibility for diverse projects.",
-        "sub_header": "This feature-packed documentation template, built with multiple frameworks including Next.js, React Router, and TanStack Router, offers a sleek and responsive design, perfect for all your project documentation needs.",
-        "get_started": "Get Stared",
-        "read_blog": "Read Blog",
-        "name": "PolarisDocs"
+        "follow_github": "Follow our journey",
+        "main_header": "Reach new limits with enterprise-grade technology solutions.",
+        "sub_header": "Polaris Systems provides cutting-edge cloud infrastructure, AI integration, security solutions, and custom software development to power your business transformation.",
+        "get_started": "Get Started",
+        "read_blog": "Learn More",
+        "name": "Polaris Systems"
     },
     "footer": {
         "built_by": "Build by",
-        "source_code_available": "The source code is available on",
-        "deploy": "Deploy",
-        "sponsor": "Sponsor"
+        "source_code_available": "The source code is available on"
     },
     "navbar": {
         "links": {

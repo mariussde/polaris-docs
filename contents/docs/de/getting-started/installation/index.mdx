@@ -1,0 +1,73 @@
+---
+title: Installation
+description: Installationsanleitung für unsere Anwendung.
+---
+
+Die Einrichtung von PolarisDocs ist unkompliziert, mit Optionen zum Klonen des Repositorys oder zur Verwendung des praktischen `npx`-Befehls. PolarisDocs benötigt [Node.js](https://nodejs.org/) Version 18 oder höher für optimale Leistung.
+
+## Repository klonen
+Um zu beginnen, können Sie das PolarisDocs-Repository direkt von GitHub klonen. 
+<Stepper>
+  <StepperItem title="Schritt 1: PolarisDocs-Repository klonen">
+    Beginnen Sie mit dem Klonen des PolarisDocs-Repositorys von GitHub:
+
+    ```plaintext
+    git clone https://github.com/mariussde/polaris-docs.git
+    ```
+  </StepperItem>
+
+  <StepperItem title="Schritt 2: Projektverzeichnis aufrufen">
+    Nach dem Klonen navigieren Sie in das Projektverzeichnis, um mit der Einrichtung zu beginnen:
+
+    ```plaintext
+    cd polaris-docs
+    ```
+  </StepperItem>
+
+  <StepperItem title="Schritt 3: Erforderliche Abhängigkeiten installieren">
+    Installieren Sie alle notwendigen Projektabhängigkeiten mit npm:
+
+    <Note title="Denken Sie daran">
+      Um React 19 zu unterstützen, müssen Paketbetreuer ihre Pakete testen und aktualisieren, um React 19 als Peer-Abhängigkeit einzuschließen. Dies ist bereits in Arbeit.
+      <br/>
+    </Note>
+
+    ```plaintext
+    npm install
+    ```
+  </StepperItem>
+
+  <StepperItem title="Schritt 4: Entwicklungsserver starten">
+    Schließlich starten Sie den Entwicklungsserver, um das Projekt lokal anzuzeigen:
+
+    ```plaintext
+    npm run dev
+    ```
+  </StepperItem>
+</Stepper>
+
+## Schnelle Einrichtung mit npx
+
+Für eine schnellere Einrichtung verwenden Sie den `npx`-Befehl, um ein neues PolarisDocs-Projekt in einem Schritt zu erstellen:
+
+```plaintext
+npx create-polaris-app <project-directory>
+```
+
+**Befehlsausgabe:**
+
+```plaintext
+Creating a new PolarisDocs project in /path/to/your/project from the master branch...
+Cloning Master (Full Documentation)...
+PolarisDocs project successfully created in /path/to/your/project!
+
+Next steps:
+1. Navigate to your project directory:
+   cd <project-directory>
+2. Install dependencies:
+   npm install
+3. Start the development server:
+   npm run dev
+```
+
+Mit dieser Einrichtung haben Sie eine einsatzbereite PolarisDocs-Instanz, um mit dem Erstellen Ihrer Dokumentation zu beginnen.

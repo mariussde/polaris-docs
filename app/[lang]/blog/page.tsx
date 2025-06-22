@@ -2,7 +2,7 @@ import LocalizedLink from "@/components/localized-link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Dictionary, getDictionary, LangProps } from "@/lib/dictionaries";
 import { Author, BlogMdxFrontmatter, getAllBlogs } from "@/lib/markdown";
-import { formatDate2, stringToDate } from "@/lib/utils";
+import { formatDate2, stringToDate, getGitHubAvatarUrl } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -80,7 +80,10 @@ function AvatarGroup({ users, max = 4 }: { users: Author[]; max?: number }) {
             index !== 0 ? "-ml-3" : ""
           } `}
         >
-          <AvatarImage src={user.avatar} alt={user.username} />
+          <AvatarImage 
+            src={user.avatar || getGitHubAvatarUrl(user.handle, 80)} 
+            alt={user.username} 
+          />
           <AvatarFallback>
             {user.username.slice(0, 2).toUpperCase()}
           </AvatarFallback>

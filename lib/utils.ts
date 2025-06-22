@@ -148,3 +148,7 @@ export function getIconName(name: string): string {
   const ext = splittedNames[splittedNames.length - 1]?.toLowerCase();
   return fileExtensionIconMap[ext as keyof typeof fileExtensionIconMap] || "code";
 }
+
+export const getGitHubAvatarUrl = (username: string, size: number = 400): string => {
+  return `https://avatars.githubusercontent.com/${username}?size=${size}`;
+};

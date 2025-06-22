@@ -1,13 +1,30 @@
 import Link from "next/link";
-import { CommandIcon} from "lucide-react";
 import { Dictionary } from "@/lib/dictionaries";
+import Image from "next/image";
+import logoLight from "@/public/logo-light.png";
+import logoDark from "@/public/logo-dark.png";
 
 export function Footer({ dict }: { dict: Dictionary }) {
   return (
-    <footer className="border-t w-full h-16">
-      <div className="container flex items-center sm:justify-between justify-center sm:gap-0 gap-4 h-full text-muted-foreground text-sm flex-wrap sm:py-0 py-3 max-sm:px-4">
+    <footer className="border-t w-full mt-auto">
+      <div className="container flex items-center sm:justify-between justify-center sm:gap-0 gap-4 py-4 text-muted-foreground text-sm flex-wrap max-sm:px-4">
         <div className="flex items-center gap-3">
-          <CommandIcon className="sm:block hidden w-5 h-5 text-muted-foreground" />
+          <div className="hidden sm:block">
+            <Image
+              src={logoLight}
+              width={22}
+              height={22}
+              alt="logo"
+              className="dark:hidden"
+            />
+            <Image
+              src={logoDark}
+              width={22}
+              height={22}
+              alt="logo"
+              className="hidden dark:block"
+            />
+          </div>
           <p className="text-center">
             {dict.footer.source_code_available}{" "}
             <Link

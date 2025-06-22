@@ -44,7 +44,7 @@ export default async function Home({ params }: LangProps) {
       </div>
       <span className="flex flex-row items-start sm:gap-2 gap-0.5 text-muted-foreground text-md mt-7 -mb-12 max-[800px]:mb-12 font-code sm:text-base text-sm font-medium">
         <TerminalSquareIcon className="w-5 h-5 sm:mr-1 mt-0.5" />
-        {"npx create-aria-doc <project-directory>"}
+        {"npx create-polaris-app <project-directory>"}
       </span>
     </div>
   );

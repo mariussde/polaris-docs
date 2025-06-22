@@ -1,0 +1,94 @@
+---
+title: Internacionalización
+description: Aprende cómo habilitar soporte multilingüe en tu documentación usando la configuración i18n integrada.
+---
+
+La internacionalización (i18n) está integrada en esta plantilla para soportar múltiples idiomas desde el inicio. Esta guía te lleva a través de la configuración usando la CLI y cómo agregar y acceder a traducciones en tu aplicación.
+
+## Comenzando
+
+Para habilitar la internacionalización, inicializa tu proyecto con la CLI y selecciona la opción `i18n` cuando se te solicite:
+
+```bash
+npx PolarisDocs-cli <template> <project-directory>
+```
+
+## Archivos de Traducción
+
+Las traducciones se almacenan en archivos de diccionario, organizados por códigos de idioma. Puedes encontrarlos en:
+
+```
+nextjs-i18n/dictionaries/en.json
+nextjs-i18n/dictionaries/fr.json
+```
+
+Agrega todas tus claves y valores de traducción dentro de estos archivos JSON. La estructura soporta claves anidadas y es completamente type-safe.
+
+Ejemplo `en.json`:
+```json
+{
+  "error": {
+    "title": "Something went wrong",
+    "sub_text": "Please try again later."
+  }
+}
+```
+
+## Organizando Contenido Localizado
+
+Para mantener tu contenido localizado organizado, sigue esta estructura:
+
+- Contenido de documentación:
+  ```
+  contents/docs/en/getting-started/introduction/index.mdx
+  contents/docs/fr/getting-started/introduction/index.mdx
+  ```
+
+- Contenido de blog:
+  ```
+  contents/blog/en/introduction.mdx
+  contents/blog/fr/introduction.mdx
+  ```
+
+Cada idioma debe reflejar la misma estructura para mantener consistencia.
+
+## Accediendo a Diccionarios
+
+### En Componentes de Servidor
+
+En tus componentes de servidor (incluyendo páginas), puedes obtener el diccionario para la localización actual usando la utilidad `getDictionary`:
+
+```ts
+import { getDictionary } from '@/lib/dictionary';
+
+export default async function Page({ params }) {
+  const { lang } = params;
+  const dict = await getDictionary(lang);
+
+  return <p>{dict.error.sub_text}</p>;
+}
+```
+
+También puedes pasar `dict` a otros componentes de servidor como prop.
+
+### En Componentes de Cliente
+
+Para uso del lado del cliente, usa el hook `useDictionary`:
+
+```ts
+'use client';
+
+import { useDictionary } from '@/lib/dictionary';
+
+export default function ErrorMessage() {
+  const dict = useDictionary();
+
+  return <p>{dict.error.sub_text}</p>;
+}
+```
+
+Este hook te da acceso al diccionario type-safe en tus componentes de cliente.
+
+---
+
+Para una implementación completa, revisa la publicación del blog aquí: [Next.js i18n with Dictionary Pattern](https://mariussde.vercel.app/next-i18n)

@@ -30,7 +30,7 @@ export default function SubLink({
 
   const Comp = (
     <LocalizedLink
-      activeClassName="text-red-500 dark:font-medium font-semibold"
+      activeClassName="text-primary dark:font-medium font-semibold"
       href={href}
     >
       {dict.leftbar[title as keyof typeof dict.leftbar]}

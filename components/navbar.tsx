@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import { GithubIcon, TwitterIcon, CommandIcon } from "lucide-react";
+import { GithubIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import Search from "./search";
@@ -9,6 +9,9 @@ import { SheetClose } from "@/components/ui/sheet";
 import LangSelect from "./lang-select";
 import { Dictionary } from "@/lib/dictionaries";
 import LocalizedLink from "./localized-link";
+import Image from "next/image";
+import logoLight from "@/public/logo-light.png";
+import logoDark from "@/public/logo-dark.png";
 
 export const NAVLINKS = [
   {
@@ -26,7 +29,8 @@ export function Navbar({ dict }: { dict: Dictionary }) {
   return (
     <nav className="w-full border-b h-16 sticky top-0 z-50 bg-background">
       <div className="sm:container mx-auto w-[95vw] h-full flex items-center justify-between md:gap-2">
-        <div className="flex items-center gap-5">
+        {/* Left Section */}
+        <div className="flex items-center gap-5 flex-1 justify-start">
           <SheetLeftbar dict={dict} />
           <div className="flex items-center gap-6">
             <div className="sm:flex hidden">
@@ -38,9 +42,14 @@ export function Navbar({ dict }: { dict: Dictionary }) {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        {/* Center Section - Search Bar */}
+        <div className="flex justify-center max-w-md mx-4">
+          <Search dict={dict} />
+        </div>
+
+        {/* Right Section */}
+        <div className="flex items-center gap-3 flex-1 justify-end">
           <div className="flex items-center gap-2">
-            <Search dict={dict} />
             <div className="flex ml-2.5 sm:ml-0">
               <LangSelect />
               <Link
@@ -61,7 +70,20 @@ export function Navbar({ dict }: { dict: Dictionary }) {
 export function Logo() {
   return (
     <LocalizedLink href="/" className="flex items-center gap-2.5">
-      <CommandIcon className="w-6 h-6 text-muted-foreground" strokeWidth={2} />
+      <Image
+        src={logoLight}
+        width={28}
+        height={28}
+        alt="logo"
+        className="dark:hidden"
+      />
+      <Image
+        src={logoDark}
+        width={28}
+        height={28}
+        alt="logo"
+        className="hidden dark:block"
+      />
       <h2 className="text-md font-bold font-code">PolarisDocs</h2>
     </LocalizedLink>
   );
@@ -81,7 +103,7 @@ export function NavMenu({
           <LocalizedLink
             key={item.title + item.href}
             className="flex items-center gap-1 dark:text-stone-300/85 text-stone-800"
-            activeClassName="!text-red-600 dark:font-medium font-semibold"
+            activeClassName="!text-primary dark:font-medium font-semibold"
             href={item.href}
             absolute={item.absolute}
           >

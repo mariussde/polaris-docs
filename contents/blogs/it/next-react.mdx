@@ -1,0 +1,119 @@
+---
+title: "Utilizzo di React Server Components e Server Actions in Next.js"
+description: "Esplora come sfruttare React Server Components e Server Actions in Next.js per costruire applicazioni web moderne ed efficienti. Impara come queste funzionalità migliorano le prestazioni e semplificano la logica lato server."
+date: 05-09-2024
+authors:
+  - handle: mariussde
+    username: Marius SDE
+    handleUrl: "https://github.com/mariussde"
+  - handle: vercel
+    username: React Dev
+    handleUrl: "https://github.com/vercel"
+cover: "/react-next.png"
+---
+
+## Introduzione: Migliorare Next.js con React Server Components
+
+Next.js si è evoluto per includere funzionalità potenti come React Server Components e Server Actions, che offrono un nuovo approccio per gestire il rendering lato server e la logica. Queste funzionalità forniscono un approccio più efficiente e ottimizzato per costruire applicazioni web, permettendoti di recuperare dati e renderizzare componenti sul server senza compromettere le prestazioni.
+
+In questo post del blog, esploreremo come utilizzare React Server Components e Server Actions in Next.js con esempi pratici e frammenti di codice.
+
+## Cosa sono React Server Components?
+
+React Server Components (RSC) sono un nuovo tipo di componente introdotto da React che ti permette di renderizzare componenti sul server. Questo approccio aiuta a ridurre la quantità di JavaScript inviato al client e migliora le prestazioni spostando il lavoro di rendering sul server.
+
+### Vantaggi di React Server Components
+
+- **Prestazioni Migliorate**: Rendendo sul server, riduci la quantità di JavaScript lato client e migliori i tempi di caricamento.
+- **Esperienza Utente Migliorata**: Caricamenti iniziali delle pagine più veloci e interazioni più fluide.
+- **Recupero Dati Semplificato**: Recupera dati sul server e passali direttamente ai componenti.
+
+### Esempio: Creare un Server Component
+
+Ecco un esempio base di un React Server Component in un'applicazione Next.js:
+
+```jsx
+// app/components/UserProfile.server.js
+import { getUserData } from "../lib/api";
+
+export default async function UserProfile() {
+  const user = await getUserData();
+
+  return (
+    <div>
+      <h1>{user.name}</h1>
+      <p>{user.email}</p>
+    </div>
+  );
+}
+```
+
+In questo esempio, `UserProfile` è un server component che recupera i dati dell'utente sul server e li renderizza.
+
+## Cosa sono Server Actions?
+
+Server Actions sono funzioni che vengono eseguite sul server in risposta a interazioni dell'utente o altri eventi. Ti permettono di gestire la logica lato server, come l'invio di moduli o richieste API, direttamente dai tuoi componenti React.
+
+### Vantaggi di Server Actions
+
+- **Logica del Server Semplificata**: Scrivi codice lato server direttamente nei tuoi componenti.
+- **Sicurezza Migliorata**: Gestisci operazioni sensibili sul server invece che sul client.
+- **Prestazioni Migliorate**: Riduci JavaScript lato client e sposta i compiti sul server.
+
+### Esempio: Utilizzo di Server Actions
+
+Ecco come puoi utilizzare Server Actions in un'applicazione Next.js per gestire l'invio di moduli:
+
+```jsx
+// app/actions/submitForm.js
+import { saveFormData } from "../lib/api";
+
+export async function submitForm(data) {
+  await saveFormData(data);
+  return { success: true };
+}
+```
+
+```jsx
+// app/components/ContactForm.js
+"use client";
+
+import { submitForm } from "../actions/submitForm";
+
+export default function ContactForm() {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const result = await submitForm(Object.fromEntries(formData));
+    if (result.success) {
+      alert("Modulo inviato con successo!");
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Nome:
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        Email:
+        <input type="email" name="email" required />
+      </label>
+      <button type="submit">Invia</button>
+    </form>
+  );
+}
+```
+
+In questo esempio, `submitForm` è una server action che elabora i dati del modulo sul server, e `ContactForm` è un client component che utilizza questa action per gestire l'invio di moduli.
+
+## Conclusione: Sfruttare Funzionalità Moderne per Applicazioni Web Migliori
+
+React Server Components e Server Actions in Next.js forniscono strumenti potenti per costruire applicazioni web efficienti e moderne. Sfruttando queste funzionalità, puoi migliorare le prestazioni, semplificare la logica lato server e creare un'esperienza utente più reattiva.
+
+Mentre costruisci le tue applicazioni Next.js, considera di incorporare React Server Components e Server Actions per sfruttare al massimo gli ultimi progressi nello sviluppo web.
+
+Buona programmazione!
+
+🚀✨ 

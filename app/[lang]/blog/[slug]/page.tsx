@@ -5,7 +5,7 @@ import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { formatDate } from "@/lib/utils";
+import { formatDate, getGitHubAvatarUrl } from "@/lib/utils";
 import Image from "next/image";
 import { getDictionary, LangProps } from "@/lib/dictionaries";
 import LocalizedLink from "@/components/localized-link";
@@ -72,8 +72,8 @@ export default async function BlogPage(props: PageProps & LangProps) {
           <Image
             src={res.frontmatter.cover}
             alt="cover"
-            width={700}
-            height={400}
+            width={1000}
+            height={1000}
             className="w-full h-[400px] rounded-md border object-cover"
           />
         </div>
@@ -94,7 +94,10 @@ function Authors({ authors }: { authors: Author[] }) {
             key={author.username}
           >
             <Avatar className="w-10 h-10">
-              <AvatarImage src={author.avatar} />
+              <AvatarImage 
+                src={author.avatar || getGitHubAvatarUrl(author.handle, 80)} 
+                alt={author.username}
+              />
               <AvatarFallback>
                 {author.username.slice(0, 2).toUpperCase()}
               </AvatarFallback>

@@ -1,21 +1,19 @@
 {
     "metadata": {
-        "title": "PolarisDocs - Modèle",
-        "description": "Ce modèle de documentation complet, conçu avec Next.js et disponible en open source, offre un design élégant et réactif, adapté à tous vos besoins en matière de documentation de projet."
+        "title": "Polaris Systems - Solutions Technologiques d'Entreprise",
+        "description": "Polaris Systems fournit une infrastructure cloud de niveau entreprise, une intégration IA, des solutions de sécurité et un développement logiciel personnalisé pour les entreprises modernes."
     },
     "home": {
-        "follow_github": "Suivez-nous sur GitHub",
-        "main_header": "Créez facilement de superbes sites de documentation avec Next.js et les composants serveur.",
-        "sub_header": "Ce modèle de documentation riche en fonctionnalités, conçu avec Next.js, offre un design élégant et réactif, parfait pour tous vos besoins en documentation de projet.",
+        "follow_github": "Suivez notre parcours",
+        "main_header": "Atteignez de nouvelles limites avec des solutions technologiques de niveau entreprise.",
+        "sub_header": "Polaris Systems fournit une infrastructure cloud de pointe, une intégration IA, des solutions de sécurité et un développement logiciel personnalisé pour alimenter votre transformation d'entreprise.",
         "get_started": "Commencer",
-        "read_blog": "Lire le blog",
-        "name": "PolarisDocs"
+        "read_blog": "En Savoir Plus",
+        "name": "Polaris Systems"
     },
     "footer": {
         "built_by": "Créé par",
-        "source_code_available": "Le code source est disponible sur",
-        "deploy": "Déployer",
-        "sponsor": "Sponsor"
+        "source_code_available": "Le code source est disponible sur"
     },
     "navbar": {
         "links": {

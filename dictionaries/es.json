@@ -1,21 +1,19 @@
 {
     "metadata": {
-        "title": "PolarisDocs - Plantilla",
-        "description": "Esta plantilla de documentación completa, elaborada con Next.js y disponible como código abierto, ofrece un diseño elegante y responsivo, adaptado para satisfacer todas sus necesidades de documentación de proyectos."
+        "title": "Polaris Systems - Soluciones Tecnológicas Empresariales",
+        "description": "Polaris Systems ofrece infraestructura en la nube de nivel empresarial, integración de IA, soluciones de seguridad y desarrollo de software personalizado para empresas modernas."
     },
     "home": {
-        "follow_github": "Síguenos en GitHub",
-        "main_header": "Construye fácilmente sitios de documentación impresionantes con flexibilidad para diversos proyectos.",
-        "sub_header": "Esta plantilla de documentación repleta de funciones, construida con múltiples frameworks incluyendo Next.js, React Router y TanStack Router, ofrece un diseño elegante y responsivo, perfecto para todas sus necesidades de documentación de proyectos.",
+        "follow_github": "Síguenos en nuestro viaje",
+        "main_header": "Alcanza nuevos límites con soluciones tecnológicas de nivel empresarial.",
+        "sub_header": "Polaris Systems proporciona infraestructura en la nube de vanguardia, integración de IA, soluciones de seguridad y desarrollo de software personalizado para impulsar la transformación de tu empresa.",
         "get_started": "Comenzar",
-        "read_blog": "Leer Blog",
-        "name": "PolarisDocs"
+        "read_blog": "Saber Más",
+        "name": "Polaris Systems"
     },
     "footer": {
         "built_by": "Construido por",
-        "source_code_available": "El código fuente está disponible en",
-        "deploy": "Desplegar",
-        "sponsor": "Patrocinar"
+        "source_code_available": "El código fuente está disponible en"
     },
     "navbar": {
         "links": {

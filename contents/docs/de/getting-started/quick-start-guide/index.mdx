@@ -1,0 +1,122 @@
+---
+title: Schnellstart-Anleitung
+description: Dieser Abschnitt bietet einen Überblick über die Schnellstart-Anleitung.
+---
+
+Befolgen Sie diese einfachen Anweisungen, um Ihr Projekt effizient einzurichten und ohne Verzögerung mit der Erstellung von Inhalten zu beginnen!:
+
+<Note type="info">
+  Alle Vorlagen folgen derselben Schnellstart-Anleitung, sodass Sie diese Schritte universell anwenden können.
+</Note>
+
+## Dokumentation
+
+1. **Routing konfigurieren**
+
+   - Öffnen Sie die Datei `@lib/route-config.ts` und fügen Sie Ihre Routing-Seiten hinzu:
+
+   
+     ```typescript:route-config.ts
+     export const ROUTES: EachRoute[] = [
+       // Neue Route unten hinzufügen
+       {
+         title: "Fundamentals",
+         href: "/fundamentals",
+         noLink: true, // Auf true setzen, um Routing zu verhindern
+         items: [
+           // Alle Untersektionen unter `fundamentals`
+           { title: "HTTP Server", href: "/http-server" },
+         ],
+       },
+     ];
+     ```
+
+2. **Inhaltsstruktur erstellen**
+
+   - Navigieren Sie zum Verzeichnis `@content/docs` und erstellen Sie einen Ordner namens `fundamentals`, wie in der `route-config`-Datei definiert. Erstellen Sie innerhalb dieses Ordners einen Unterordner namens `http-server`, und erstellen Sie darin eine `index.mdx`-Datei, die gerendert wird, wenn Sie zu `/fundamentals/http-server` navigieren:
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "content",
+      isOpen: true,
+      children: [
+        {
+          type: "folder",
+          name: "docs",
+          isOpen: true,
+          children: [
+            {
+              type: "folder",
+              name: "fundamentals",
+              isOpen: true,
+              children: [
+                {
+                  type: "folder",
+                  name: "http-server",
+                  isOpen: true,
+                  children: [{ type: "file", name: "index.mdx" }],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ]}
+/>
+
+
+3. **Markdown-Inhalt schreiben**
+   - Beginnen Sie mit dem Schreiben Ihres Markdown-Inhalts in der `index.mdx`-Datei.
+
+<Note type="warning">
+  Stellen Sie sicher, dass Sie Frontmatter am Anfang der Datei einfügen, das für
+  den Seitentitel und die Beschreibung verwendet wird:
+</Note>
+
+     ```markdown:index.mdx showLineNumbers {1-4}
+     ---
+     title: HTTP Server
+     description: Dieser Abschnitt handelt vom HTTP Server.
+     ---
+
+     <!-- Hier kommt Ihr Markdown-Inhalt -->
+     ```
+
+4. **Anwendung ausführen**
+   - Stellen Sie sicher, dass Ihre Anwendung läuft. Navigieren Sie zu `http://localhost:3000/docs/fundamentals/http-server`, um Ihren Inhalt anzuzeigen. Sie sollten ihn auch im linken Panel sehen, sodass Sie zu anderen Seiten navigieren können.
+
+## Blogs
+
+Um mit Blogs zu beginnen, befolgen Sie diese Schritte:
+
+- Navigieren Sie zum Verzeichnis `@content/blogs` und erstellen Sie eine Datei mit einem eindeutigen Namen, der mit `.mdx` endet, und beginnen Sie dann mit dem Schreiben des Markdown-Inhalts.
+
+<Note type="warning">
+  Stellen Sie sicher, dass Sie das folgende Frontmatter hinzufügen, um die Daten für die Blogs
+  ordnungsgemäß zu formatieren
+</Note>
+
+```markdown:blog-name.mdx
+---
+title: "Building a Recursive File System with React: A Deep Dive"
+description: "Explore how to create a recursive file system in React. This blog post provides a comprehensive guide on building a file system where folders and files can be nested, added, renamed, and deleted."
+date: 02-09-2024
+authors:
+  - avatar: "https://ui.shadcn.com/avatars/02.png"
+    handle: mariussde
+    username: Nisab Mohd
+    handleUrl: "https://github.com/mariussde"
+cover: "https://img.freepik.com/premium-vector/many-monsters-various-colors-doodle-come-bless-birthday-happy_577083-84.jpg?w=826"
+---
+
+<!-- Ihr Blog-Markdown-Inhalt -->
+```
+
+- Navigieren Sie zu Ihrem lokalen Entwicklungsserver unter `http://localhost:3000/blog`, wo Sie Ihren Blog aufgelistet und nach Datum sortiert sehen werden. Sie können zu jedem Blog navigieren, um ihn zu lesen.
+
+## Weiter erkunden
+
+Dieser Abschnitt dient als Ausgangspunkt für die Erkundung der Anwendung. Durch Befolgen der obigen Schritte können Sie Ihre Inhalte schnell und einfach einrichten. Für weitere Anpassungen und Kontrolle konsultieren Sie bitte die folgenden Seiten.

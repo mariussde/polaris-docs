@@ -1,0 +1,122 @@
+---
+title: Guía de Inicio Rápido
+description: Esta sección proporciona una visión general de la Guía de Inicio Rápido.
+---
+
+¡Sigue estas simples instrucciones para configurar tu proyecto eficientemente y comenzar a crear contenido sin demora!:
+
+<Note type="info">
+  Todas las plantillas siguen la misma guía de inicio rápido, por lo que puedes aplicar estos pasos universalmente.
+</Note>
+
+## Documentación
+
+1. **Configurar Enrutamiento**
+
+   - Abre el archivo `@lib/route-config.ts` y agrega tus páginas de enrutamiento:
+
+   
+     ```typescript:route-config.ts
+     export const ROUTES: EachRoute[] = [
+       // Agregar nueva ruta abajo
+       {
+         title: "Fundamentals",
+         href: "/fundamentals",
+         noLink: true, // Establecer en true para prevenir enrutamiento
+         items: [
+           // Todas las subsecciones bajo `fundamentals`
+           { title: "HTTP Server", href: "/http-server" },
+         ],
+       },
+     ];
+     ```
+
+2. **Crear Estructura de Contenido**
+
+   - Navega al directorio `@content/docs` y crea una carpeta llamada `fundamentals`, como se define en el archivo `route-config`. Dentro de esta carpeta, crea una subcarpeta llamada `http-server`, y dentro de esa, crea un archivo `index.mdx` que se renderizará cuando navegues a `/fundamentals/http-server`:
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "content",
+      isOpen: true,
+      children: [
+        {
+          type: "folder",
+          name: "docs",
+          isOpen: true,
+          children: [
+            {
+              type: "folder",
+              name: "fundamentals",
+              isOpen: true,
+              children: [
+                {
+                  type: "folder",
+                  name: "http-server",
+                  isOpen: true,
+                  children: [{ type: "file", name: "index.mdx" }],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ]}
+/>
+
+
+3. **Escribir Tu Contenido Markdown**
+   - Comienza a escribir tu contenido markdown dentro del archivo `index.mdx`.
+
+<Note type="warning">
+  Asegúrate de incluir frontmatter al principio del archivo, que se usa para
+  el título de la página y la descripción:
+</Note>
+
+     ```markdown:index.mdx showLineNumbers {1-4}
+     ---
+     title: HTTP Server
+     description: Esta sección trata sobre el Servidor HTTP.
+     ---
+
+     <!-- Aquí va tu contenido markdown -->
+     ```
+
+4. **Ejecutar Tu Aplicación**
+   - Asegúrate de que tu aplicación esté ejecutándose. Navega a `http://localhost:3000/docs/fundamentals/http-server` para ver tu contenido. También deberías verlo en el panel izquierdo, permitiéndote navegar a otras páginas.
+
+## Blogs
+
+Para comenzar con blogs, sigue estos pasos:
+
+- Navega al directorio `@content/blogs` y crea un archivo con un nombre único que termine en `.mdx`, luego comienza a escribir el contenido markdown dentro.
+
+<Note type="warning">
+  Asegúrate de agregar el siguiente frontmatter para formatear los datos para los blogs
+  correctamente
+</Note>
+
+```markdown:blog-name.mdx
+---
+title: "Building a Recursive File System with React: A Deep Dive"
+description: "Explore how to create a recursive file system in React. This blog post provides a comprehensive guide on building a file system where folders and files can be nested, added, renamed, and deleted."
+date: 02-09-2024
+authors:
+  - avatar: "https://ui.shadcn.com/avatars/02.png"
+    handle: mariussde
+    username: Nisab Mohd
+    handleUrl: "https://github.com/mariussde"
+cover: "https://img.freepik.com/premium-vector/many-monsters-various-colors-doodle-come-bless-birthday-happy_577083-84.jpg?w=826"
+---
+
+<!-- Tu contenido markdown del blog -->
+```
+
+- Navega a tu servidor de desarrollo local en `http://localhost:3000/blog`, donde verás tu blog listado y ordenado por fecha. Puedes navegar a cualquier blog para leerlo.
+
+## Explorar Más
+
+Esta sección sirve como tu punto de partida para explorar la aplicación. Siguiendo los pasos anteriores, puedes configurar tu contenido rápida y fácilmente. Para más personalización y control, consulta las siguientes páginas.
